@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import { Text, View, StyleSheet, Pressable, ScrollView} from 'react-native';
+import { Text, View, StyleSheet, Pressable, ScrollView, Image} from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
@@ -21,21 +21,21 @@ const ProductListScreen = ({navigation}) => {
       key: Math.random().toString(), 
       name:"Macbook", 
       price: "$3000", 
-      img: "n/a", 
+      img: 'https://reactnative.dev/img/tiny_logo.png', 
       details: "Product 1 is an Apple laptop. Model is Pro 2020. This is a dummy text. This is a dummy text. This is a dummy text."
     },
     {
       key: Math.random().toString(), 
       name:"Phone", 
       price: "$1000", 
-      img: "n/a", 
+      img: 'https://reactnative.dev/img/tiny_logo.png', 
       details: "Product 2 is a Samsung smartphone. Model is S20. This is a dummy text. This is a dummy text. This is a dummy text."
     },
     {
       key: Math.random().toString(), 
       name:"Shoes", 
       price: "$500", 
-      img: "n/a", 
+      img: 'https://reactnative.dev/img/tiny_logo.png', 
       details: "Product 3 is a Markhor shoe. Model is oxford. This is a dummy text. This is a dummy text. This is a dummy text."
     }
   ]);
@@ -50,7 +50,7 @@ const ProductListScreen = ({navigation}) => {
                 <Text style={{fontWeight: 'bold', color: 'grey'}}>{"Product # "}{index+1}{":"}</Text>
                 <Text style={{padding: 2,}}>{"Name -- "}{data.name}</Text>
                 <Text style={{padding: 2,}}>{"Price -- "}{data.price}</Text>
-                <Text style={{padding: 2,}}>{"Image -- "}{data.img}</Text>
+                <Image style={{width: 50, height: 50}} source={{uri:data.img}}/>
               </View>
             </Pressable> 
           )
